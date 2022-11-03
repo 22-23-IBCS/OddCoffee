@@ -34,7 +34,7 @@ def main():
         print("That would be $" + str(round(price*many, 2)) + " dollars")
         total=total+Gaming.get(request)
 
-        res = input("What would you like to buy? Enter 'stop' if done shopping\n")
+        res = input("Continue shopping? Enter 'stop' if done shopping\n")
         if res == "stop":
             print("Thanks for shopping at PC Central!!!")
             toBuy.append(request)
@@ -44,7 +44,6 @@ def main():
         else:
             toBuy.append(request)
             total=round(total)+Gaming.get(request)
-            print("Your Total is $"+str(round(total))+".00")
 
 
 
