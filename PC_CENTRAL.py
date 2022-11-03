@@ -23,9 +23,8 @@ def main():
     print("That would be $" + str(round(price*many, 2)) + " dollars")
     total=(price*many)
     
-    toBuy = []
 
-    
+    toBuy=[]
     while True:
         print(list(Gaming.keys()))
         request = input("What would you like to buy?\n")
@@ -46,7 +45,7 @@ def main():
             toBuy.append(request)
             total=round(total)+Gaming.get(request)
             print("Your Total is $"+str(round(total))+".00")
-    print(toBuy)
+
 
 
 
@@ -58,3 +57,4 @@ def main():
 
 if __name__ == "__main__":
     main()  
+
