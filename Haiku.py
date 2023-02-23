@@ -1,43 +1,54 @@
 import random
 
-def main():
-    y=input("Would you like a Haiku?")
-
-    while y!="no":
-
-        sample=open("OneSyllable.txt")
-        myString1=sample.read()
-        myList1 = myString1.split()
-        
-        sample=open("TwoSyllable.txt")
-        myString2=sample.read()
-        myList2 = myString2.split()
-        
-        sample=open("ThreeSyllable.txt")
-        myString3=sample.read()
-        myList3 = myString3.split()
-        
-        sample=open("FourSyllable.txt")
-        myString4=sample.read()
-        myList4 = myString4.split()
-
-
-        firstline= ("{0} {1}")
-        "(firstline.format(random.choice(myList1),random.choice(myList4)))"
-        L1=[random.choice(myList1),random.choice(myList4)]
-        for i in L1:
-            print(random.choice(L1))
-        
-        secondline= ("{0} {1} {2}")
-        print(secondline.format(random.choice(myList1),
-                                random.choice(myList4),
-                                random.choice(myList2)))
-        thirdline=("{0}{1}{2}")
-        print(thirdline.format(random.choice(myList1),random.choice(myList2),random.choice(myList2)))
-        y=input("Would you like a Haiku?(say no to stop)")
-        if y==("no"):
+def genLine(syl, val, excluded_letters):
+    line = ""
+    while True:
+        v = random.randint(1,4)
+        if val - v >= 0:
+            myList = syl.get(v).split()
+            word = random.choice(myList)
+            if not any(letter in excluded_letters for letter in word):
+                line += word + " "
+                val -= v
+        if val == 0:
             break
+    
+    return line
 
+def main():
+    y=input("would you like a haiku?(no to stop):")
+    if y!=("no"):
         
-if __name__=="__main__":
+        f1 = open("oneSyllable.txt")
+        f2 = open("twoSyllable.txt")
+        f3 = open("threeSyllable.txt")
+        f4 = open("fourSyllable.txt")
+        readOne = f1.read()
+        readTwo = f2.read()
+        readThree = f3.read()
+        readFour = f4.read()
+        syl = {1 : readOne,
+               2 : readTwo,
+               3 : readThree,
+               4 : readFour}
+
+        while True:
+            excluded_letters = input("Enter letters you don't want in the haiku (or type skip to continue): ")
+            if excluded_letters == "":
+                
+                print(genLine(syl, 5, excluded_letters))
+                print(genLine(syl, 7, excluded_letters))
+                print(genLine(syl, 5, excluded_letters))
+
+            else:
+                print(genLine(syl, 5, excluded_letters))
+                print(genLine(syl, 7, excluded_letters))
+                print(genLine(syl, 5, excluded_letters))
+            y=input("would you like a haiku?(no to stop):")
+            if y==("no"):
+                print("Thank you for using my generator")
+                break
+
+if __name__ == "__main__":
     main()
+
