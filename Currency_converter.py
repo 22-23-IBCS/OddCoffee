@@ -11,13 +11,11 @@ q=input("Welcome to Currency Converter! Would you like to convert? Yes:No")
 while q!="No":
     
     z=int(input("type amount:   "))
-    y=input("select a currency?: US_dollar, France_euro, Mexico_peso, Japan_yen, Canada_dollar, India_rupee:----->")
-    f=input("What would you like to convert to?:US_dollar, France_euro, Mexico_peso, Japan_yen, Canada_dollar, India_rupee:------>    ")
+    y=input("select a currency?: US_dollar, France_euro, Mexico_peso, Japan_yen, Canada_dollar, India_rupee:      ")
+    f=input("What would you like to convert to?:US_dollar, France_euro, Mexico_peso, Japan_yen, Canada_dollar, India_rupee:    ")
     
 
-    v=(convert(z,y,f))
-    print("you now have "+str(v)+" "+str(f))
+    print(convert(z,y,f))
     q=input("Welcome to Currency Converter! Would you like to convert? Yes:No")
 
 print("Thank You")
-        
