@@ -1,0 +1,11 @@
+username = "BurgerExpress"
+kills = 2700
+deaths = 2000
+wins = 11
+losses = 5
+assists = 300
+vandal_hs_pct = 45.0
+vandal_bs_pct = 55.0
+phantom_hs_pct = 37.0
+phantom_bs_pct = 63.0
+main_agent = "Jett"

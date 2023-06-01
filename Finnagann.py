@@ -1,0 +1,11 @@
+username = "Finnagann"
+kills = 6800
+deaths = 5700
+wins = 37
+losses = 26
+assists = 2300
+vandal_hs_pct = 21.0
+vandal_bs_pct = 79.0
+phantom_hs_pct = 19.0
+phantom_bs_pct = 81.0
+main_agent = "Cypher"

@@ -1,0 +1,11 @@
+username = "Makus#3683"
+kills = 14225
+deaths = 14489
+wins = 488
+losses = 460
+assists = 5513
+vandal_hs_pct = 36.0
+vandal_bs_pct = 64.0
+phantom_hs_pct = 33.0
+phantom_bs_pct = 66.0
+main_agent = "Brimstone"
